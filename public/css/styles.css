@@ -1,0 +1,98 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  background-color: #24292d;
+  color: #f2f2f2;
+  font-size: 1.4rem;
+  max-width: 144rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.5rem 5vw;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  background-color: #24292d;
+  border: 1px solid grey;
+}
+.header a {
+  display: flex;
+  align-items: center;
+}
+.header a img {
+  height: 2.5rem;
+}
+.header__nav ul li {
+  display: inline-block;
+}
+.header__nav ul li:not(:last-child) {
+  margin-right: 5rem;
+}
+.header__nav--link {
+  color: #d9d9d9;
+}
+
+.main {
+  padding: 0 5vw;
+  transform: translateY(10rem);
+}
+.main .main__body {
+  height: calc(100vh - 10rem);
+  display: inline-block;
+  width: 70vw;
+  padding-right: 2.5rem;
+  margin-right: 2.5rem;
+  border-right: 1px solid grey;
+  overflow-x: hidden;
+  overflow-y: auto;
+  /* Hide scrollbar for IE and Edge */
+}
+.main .main__body::-webkit-scrollbar {
+  display: none;
+}
+.main .main__body {
+  -ms-overflow-style: none;
+}
+.main .main__sidebar {
+  display: inline-block;
+  position: absolute;
+  margin-right: 5vw;
+}
+
+@media screen and (max-width: 768px) {
+  .main__body {
+    background-color: tomato;
+    display: block !important;
+    width: 100% !important;
+    margin-bottom: 2.5rem;
+  }
+  .main__sidebar {
+    display: block !important;
+    width: 87.8vw !important;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

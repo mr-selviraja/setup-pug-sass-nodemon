@@ -1,0 +1,123 @@
+// colors
+$color-primary: #57e309;
+$color-black: #212529;
+$color-black-light: #2e2e2e;
+$color-black-ultralight: #595959;
+$color-white: #f2f2f2;
+$color-grey: #d9d9d9;
+
+// font-families
+$font-regular: "Roboto", sans-serif;
+$font-accent: "Crimson Pro", serif;
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: $font-regular;
+  background-color: lighten($color-black, 1.5%);
+  color: $color-white;
+  font-size: 1.4rem;
+  max-width: 144rem;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+ul {
+  list-style-type: none;
+}
+
+// custom styles
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.5rem 5vw;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  background-color: lighten($color-black, 1.5%);
+  border: 1px solid grey;
+
+  & a {
+    display: flex;
+    align-items: center;
+
+    & img {
+      height: 2.5rem;
+    }
+  }
+
+  &__nav {
+    & ul {
+      & li {
+        display: inline-block;
+
+        &:not(:last-child) {
+          margin-right: 5rem;
+        }
+      }
+    }
+
+    &--link {
+      color: $color-grey;
+    }
+  }
+}
+
+.main {
+  padding: 0 5vw;
+  transform: translateY(10rem);
+
+  .main__body {
+    height: calc(100vh - 10rem);
+    display: inline-block;
+    width: 70vw;
+    padding-right: 2.5rem;
+    margin-right: 2.5rem;
+    border-right: 1px solid grey;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    /* Hide scrollbar for IE and Edge */
+    & {
+      -ms-overflow-style: none;
+    }
+  }
+
+  .main__sidebar {
+    display: inline-block;
+    position: absolute;
+    margin-right: 5vw;
+  }
+}
+
+// mediaqueries
+@media screen and (max-width: 768px) {
+  .main__body {
+    background-color: tomato;
+    display: block !important;
+    width: 100% !important;
+    margin-bottom: 2.5rem;
+  }
+  .main__sidebar {
+    display: block !important;
+    width: 87.8vw !important;
+  }
+}
